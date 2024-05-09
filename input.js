@@ -1,9 +1,9 @@
-const { upKey, leftKEY, downKEY, rightKEY} = require('./constants');
+const { upKey, leftKEY, downKEY, rightKEY } = require('./constants');
 
 let connection;
 
 const handleUserInput = function(key) {
-
+  // your code here
   if (key === upKey) {
     connection.write('Move: up');
   }
@@ -19,7 +19,7 @@ const handleUserInput = function(key) {
 
 };
 
-const setupInput = function(conn) {
+const setupInput = function (conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -30,4 +30,4 @@ const setupInput = function(conn) {
 };
 
 //EXPORT
-module.exports = { setupInput };
+module.exports = setupInput;
