@@ -9,13 +9,16 @@ const connect = function() {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
+  conn.on("connect", () => {
+    // code that does something when the connection is first established
+    conn.write("Name: XXX");
+  });
+  conn.on("error", (error) => {
+    console.error(error);
+  });
 
   return conn;
 };
 
 console.log("Connecting ...");
 connect();
-
-conn.on("connect", () => {
-  // code that does something when the connection is first established
-});
