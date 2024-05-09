@@ -16,4 +16,6 @@ const connect = function() {
 console.log("Connecting ...");
 connect();
 
-//dpsfoghofg
+conn.on("connect", () => {
+  // code that does something when the connection is first established
+});
