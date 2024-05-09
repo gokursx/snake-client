@@ -11,18 +11,16 @@ const connect = function() {
   conn.setEncoding("utf8");
   conn.on("connect", () => {
     // code that does something when the connection is first established
-    conn.write("Name: XXX");
+    console.log('Connection established to game server');
+    conn.write('Name: GKR');
   });
   // To dislay the dialog
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
   
-  conn.on("error", (error) => {
-    console.error(error);
-  });
-
   return conn;
 };
 
+//Exporting the function
 module.exports = connect;
