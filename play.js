@@ -1,3 +1,5 @@
+const connect = require("/.conn")
+
 const net = require("net");
 
 // establishes a connection with the game server
@@ -13,6 +15,11 @@ const connect = function() {
     // code that does something when the connection is first established
     conn.write("Name: XXX");
   });
+
+  conn.on('data', (data) => {
+    console.log('Server says: ', data);
+  });
+  
   conn.on("error", (error) => {
     console.error(error);
   });
